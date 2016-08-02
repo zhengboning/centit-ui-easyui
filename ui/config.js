@@ -135,26 +135,26 @@ define(function (require) {
     var Cache = {
         // 缓存初始加载，更多信息参考：loader.system.js
         	Init: [
-				    {
-						   id:'Optinfos',url:"system/cp/optinfo/R"
-					},
-        	       {
-        	    	   id:'loginuser',url:"system/mainframe/currentuser"
-        	       },
-                   {
-                	   id: 'Units', url: 'system/cp/allunits/A',
-                	   key: 'unitCode'
-                   }, 
-                   {
-                	   id: 'Roles', url: 'system/cp/roleinfo/G', 
-//                	   loader: function(data) {return data ? data.objList : data;},
-                	   key: 'roleCode'
-                   },
-                   {
-                	   id: 'Users', url: 'system/cp/alluser/T', 
-//                	   loader: function(data) {return data ? data.objList : data;},
-                	   key: 'userCode'
-                   }
+// 				    {
+// 						   id:'Optinfos',url:"system/cp/optinfo/R"
+// 					},
+//         	       {
+//         	    	   id:'loginuser',url:"system/mainframe/currentuser"
+//         	       },
+//                    {
+//                 	   id: 'Units', url: 'system/cp/allunits/A',
+//                 	   key: 'unitCode'
+//                    },
+//                    {
+//                 	   id: 'Roles', url: 'system/cp/roleinfo/G',
+// //                	   loader: function(data) {return data ? data.objList : data;},
+//                 	   key: 'roleCode'
+//                    },
+//                    {
+//                 	   id: 'Users', url: 'system/cp/alluser/T',
+// //                	   loader: function(data) {return data ? data.objList : data;},
+//                 	   key: 'userCode'
+//                    }
                ]
     };
     Cache = $.extend({}, Cache, {
