@@ -8,11 +8,7 @@
 <script>
     // 获取contentPath
     function getContentPath() {
-        var base =  "http://"+window.location.hostname+'/';
-        var port = window.location.port ? ':'+window.location.port : '';
-
-        base+=port;
-
+        var base =  window.location.origin+'/';
         var reg = new RegExp("/(.)*?/");
         var r = window.location.pathname.match(reg);
         if(r!=null) return  base + r[0] + '/'; return base;
