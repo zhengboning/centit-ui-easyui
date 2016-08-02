@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centit Admin</title>
+</head>
+<body>
+<script>
+    // 获取contentPath
+    function getContentPath() {
+        var base =  "http://"+window.location.hostname+'/';
+        var port = window.location.port ? ':'+window.location.port : '';
+
+        base+=port;
+
+        var reg = new RegExp("/(.)*?/");
+        var r = window.location.pathname.match(reg);
+        if(r!=null) return  base + r[0] + '/'; return base;
+    }
+
+    window.ViewContextPath = window.ContextPath = getContentPath();
+</script>
+<script src="ui/js/require.js" data-main="ui/app.js"></script>
+</body>
+</html>
