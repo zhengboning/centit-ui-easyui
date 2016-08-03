@@ -1,0 +1,28 @@
+{
+  "name": "centit-admin",
+  "version": "0.1.0",
+  "description": "基于easyui、requirejs的后台管理前端框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndxt/centit-admin.git"
+  },
+  "keywords": [
+    "easyui",
+    "requirejs",
+    "admin",
+    "jquery"
+  ],
+  "author": "zhangk1986@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndxt/centit-admin/issues"
+  },
+  "homepage": "https://github.com/ndxt/centit-admin#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
