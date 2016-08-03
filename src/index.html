@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Centit Admin</title>
+  <meta charset="UTF-8">
+  <title>Centit Admin</title>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <link rel="bookmark" href="favicon.ico"/>
 </head>
 <body>
 <script>
-    // 获取contentPath
-    function getContentPath() {
-        var base =  window.location.origin+'/';
-        var reg = new RegExp("/(.)*?/");
-        var r = window.location.pathname.match(reg);
-        if(r!=null) return  base + r[0] + '/'; return base;
-    }
+  // 获取contentPath
+  function getContentPath() {
+    var base =  window.location.origin+'/';
+    var reg = new RegExp("/(.)*?/");
+    var r = window.location.pathname.match(reg);
+    if(r!=null) return  base + r[0] + '/'; return base;
+  }
 
-    window.ViewContextPath = window.ContextPath = getContentPath();
+  window.ViewContextPath = window.ContextPath = getContentPath();
 </script>
 <script src="ui/js/require.js" data-main="ui/app.js"></script>
 </body>
