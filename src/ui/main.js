@@ -1,10 +1,10 @@
 define(function (require) {
-	require('js/easyui/easyui.extend');
+	//require('js/easyui/easyui.extend');
 	var WebSocket = require('websocket/websocket');
 
     var $ = require('jquery');
     var Config = require('config');
-    
+
     // 首页缓冲动画
     var Loading = require('widgets/loading/widget.loading');
     var loader = new Loading({
@@ -14,7 +14,7 @@ define(function (require) {
 
     // 读用户个人设置
     require('loaders/config/loader.userSetting').load()
-    
+
         .then(function () {
         	loader.progress(5, '读取用户信息');
             return require('loaders/cache/loader.userInfo').load();
@@ -53,7 +53,7 @@ define(function (require) {
         .then(function () {
             loader.end('加载完毕');
         })
-        
+
         .then(function() {
         	// websocket服务
             WebSocket.init(window.GLOBAL_IDENTIFY, {
@@ -67,6 +67,6 @@ define(function (require) {
             loader.error(error);
             //Core.gotoErrorPage(error.message ? error.message : error);
         });
-        
-        
+
+
 });
