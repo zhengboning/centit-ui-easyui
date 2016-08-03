@@ -1,4 +1,4 @@
-﻿$.extend($.fn.datagrid.defaults, {
+$.extend($.fn.datagrid.defaults, {
 	groupHeight: 25,
 	expanderWidth: 30
 });
