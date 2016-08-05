@@ -1,5 +1,5 @@
 define(function(require) {
-	
+
 	var Config = require('config');
 	var Cache = require('core/cache');
 
@@ -7,9 +7,9 @@ define(function(require) {
 
 	var ThemeConfig = {
 		id : "qui",
-		
+
 		name : "qui",
-		
+
 		css : [
             "ui/themes/qui/less/style.css",
             "ui/themes/qui/less/header.css",
@@ -19,9 +19,9 @@ define(function(require) {
         ],
 
 		icons: [],
-		
+
 		template : "ui/themes/qui/template.html",
-		
+
 		colors : [{
 			id : "sky_blue",
 			name : "天空蓝",
@@ -102,24 +102,9 @@ define(function(require) {
 				colors: ThemeConfig.colors,
 				current: Config.Theme.DefaultColor
 			}).render(toolbar);
-			// 改密码按钮
-			var ChangePassword = require('widgets/tools/widget.tool.change-password');
-			new ChangePassword().render(toolbar);
-			// 注销按钮
-			var Tool = require('widgets/tools/widget.tool');
-			new Tool({
-				url: Config.URL.Logout,
-				text: '注销',
-				iconCls: 'icon-back'
-			}).render(toolbar);
-
-			// 标题
-			document.title = Config.System.Title;
-			$('#title').text(Config.System.HeaderTitle);
-			$('#footer').text(Config.System.FooterTitle);
 		}
 
 	};
-	
+
 	return ThemeConfig;
 });

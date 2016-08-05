@@ -3,6 +3,12 @@
 exports.config = {
   baseUrl: 'src/ui',
 
+  // optimize: 'none',
+
+  preserveLicenseComments: false,
+
+  generateSourceMaps: true,
+
   paths: {
     jquery: 'js/jquery/jquery-1.11.2.min',
 

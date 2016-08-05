@@ -7,65 +7,35 @@ define(function(require) {
 	var $ = require('jquery');
 	var _ = require('underscore');
 	var Mustache = require('plugins/mustache.min');
-	
+
 	var LoaderTheme = Loader.extend(function() {
 		var _self = this;
-	
+
 		this.name = "系统主题@loader.theme.js";
-		
+
 		this.init = function() {
-			
+
 			try {
 				return this._init();
 			}
 			catch(e) {
-				
+
 				var msg = Mustache.render("加载【{{name}}】时发生错误（{{&message}}）", {
 					name: _self.name,
 					message: e.message ?　e.message : e
 				});
-				
+
 				console.error(msg);
 				return Promise.reject(msg);
 			}
 
 		};
-		
+
 		this._init = function() {
 
 			var ThemeConfig;
 
 			switch(Config.Theme.DefaultTheme || 'default') {
-				case 'qui':
-				ThemeConfig = require('themes/qui/theme');
-				break;
-//				case 'sdda':
-//					ThemeConfig = require('themes/sdda/config');
-//					break;
-				case 'ldxx':
-					ThemeConfig = require('themes/ldxx/theme');
-					break;
-				case 'jmht':
-					ThemeConfig = require('themes/jmht/theme');
-					break;
-//				case 'new':
-//					ThemeConfig = require('themes/new/config');
-//					break;
-				case 'xjoa':
-					ThemeConfig = require('themes/xjoa/theme');
-					break;
-				case 'xkj':
-					ThemeConfig = require('themes/xkj/theme');
-					break;
-				case 'mapfang':
-					ThemeConfig = require('themes/mapfang/theme');
-					break;
-				case 'zjhs':
-					ThemeConfig = require('themes/zjhs/theme');
-					break;
-//				case 'zgoa':
-//					ThemeConfig = require('themes/zgoa/config');
-					break;
 				default :
 					ThemeConfig = require('themes/qui/theme');
 			}
@@ -104,6 +74,6 @@ define(function(require) {
 			Config.Theme.init = theme.init || $.noop;
 		};
 	});
-	
+
 	return new LoaderTheme('Theme');
 });
