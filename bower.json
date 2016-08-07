@@ -1,0 +1,26 @@
+{
+  "name": "centit-admin",
+  "description": "基于easyui、requirejs的后台管理前端框架",
+  "main": "index.js",
+  "authors": [
+    "zhangk1986@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "easyui",
+    "requirejs",
+    "admin",
+    "jquery"
+  ],
+  "homepage": "https://github.com/ndxt/centit-admin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}
