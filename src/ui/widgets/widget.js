@@ -4,7 +4,6 @@ define(function(require) {
 	require('widgets/jquery.centit-panel');
 
     require('plugins/extend');
-    require('plugins/jquery.nicescroll.min');
 
     var $ = require('jquery');
 
