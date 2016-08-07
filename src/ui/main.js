@@ -56,7 +56,7 @@ define(function (require) {
 
         .then(function() {
         	// websocket服务
-            WebSocket.init(window.GLOBAL_IDENTIFY, {
+            WebSocket.init({}, {
             	msg: require('websocket/websocket.innermsg')
             });
         })

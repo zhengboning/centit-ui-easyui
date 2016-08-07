@@ -19,8 +19,6 @@ define(function (require) {
      * @type {{}}
      */
     var URL = {
-    	Dictionary: ContextPath + 'system/cp/dictionary/{{code}}',
-    	LVB: ContextPath + 'system/cp/lvb/{{code}}',
 		// 用户信息
 		UserInfo: null,
 
@@ -34,9 +32,9 @@ define(function (require) {
 		Logout: ContextPath + 'system/mainframe/logout' , // 'j_spring_security_logout',
 
 		// 首页
-		Dashboard: ViewContextPath + 'modules/dashboard/demo/dome.html'
+		Dashboard: ViewContextPath + 'modules/dashboard/qui/dashboard.html'
 	};
-	URL =$.extend({}, URL, CustomConfig.URL)
+	URL =$.extend({}, URL, CustomConfig.URL);
 
     /**
      * 主题配置

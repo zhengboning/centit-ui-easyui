@@ -11,11 +11,11 @@ define(function(require) {
 		name : "qui",
 
 		css : [
-            "ui/themes/qui/less/style.css",
-            "ui/themes/qui/less/header.css",
-            "ui/themes/qui/less/menu.css",
-            "ui/themes/qui/less/layout.css",
-            "ui/themes/qui/less/tab.css"
+            "ui/themes/qui/style.css",
+            "ui/themes/qui/header.css",
+            "ui/themes/qui/menu.css",
+            "ui/themes/qui/layout.css",
+            "ui/themes/qui/tab.css"
         ],
 
 		icons: [],
@@ -26,37 +26,37 @@ define(function(require) {
 			id : "sky_blue",
 			name : "天空蓝",
 			color: '#518CF0',
-			css : "ui/themes/qui/blue/color.css"
+			css : "ui/themes/qui/colors/blue/color.css"
 		},{
 			id : "jewelry_blue",
 			name : "宝石蓝",
 			color: '#0062BD',
-			css : "ui/themes/qui/jewelry-blue/color.css"
+			css : "ui/themes/qui/colors/jewelry-blue/color.css"
 		},{
 			id : "dark_blue",
 			name : "深蓝",
 			color: '#2D7BB4',
-			css : "ui/themes/qui/dark-blue/color.css"
+			css : "ui/themes/qui/colors/dark-blue/color.css"
 		},{
 			id : "light_blue",
 			name : "淡蓝",
 			color: '#E1EDFA',
-			css : "ui/themes/qui/light-blue/color.css"
+			css : "ui/themes/qui/colors/light-blue/color.css"
 		},{
 			id : "blue_green",
 			name : "蓝绿",
 			color: '#0FF3F8',
-			css : "ui/themes/qui/blue-green/color.css"
+			css : "ui/themes/qui/colors/blue-green/color.css"
 		},{
 			id : "orange",
 			name : "橘色",
 			color: '#FF870F',
-			css : "ui/themes/qui/orange/color.css"
+			css : "ui/themes/qui/colors/orange/color.css"
 		},{
 			id : "red",
 			name : "艳红",
 			color: '#E03E2C',
-			css : "ui/themes/qui/red/color.css"
+			css : "ui/themes/qui/colors/red/color.css"
 		}],
 
 		menuIcons: null,
