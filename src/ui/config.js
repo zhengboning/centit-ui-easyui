@@ -3,14 +3,14 @@
  */
 define(function (require) {
     var CustomConfig = require('custom/config');
-    
+
     var $ = require('jquery');
-    
+
     var _ = require('underscore');
-    
+
     // api请求路径
     var ContextPath = window.ContextPath;
-    
+
     // 静态资源请求路径
     var ViewContextPath = window.ViewContextPath || ContextPath;
 
@@ -23,16 +23,16 @@ define(function (require) {
     	LVB: ContextPath + 'system/cp/lvb/{{code}}',
 		// 用户信息
 		UserInfo: null,
-		
+
 		// 用户个性化设置
 		UserSetting: null,
-		
+
 		// 首页菜单
 		Menu: "data/menu.json",
-		
+
 		// 注销
 		Logout: ContextPath + 'system/mainframe/logout' , // 'j_spring_security_logout',
-		
+
 		// 首页
 		Dashboard: ViewContextPath + 'modules/dashboard/demo/dome.html'
 	};
@@ -45,29 +45,29 @@ define(function (require) {
     var Theme = {
         // 默认主题
         DefaultTheme: 'qui',
-        
+
         // 默认颜色
         DefaultColor: 'sky_blue',
-        
+
         // 默认菜单布局
         DefaultLayout: 'left',
 
         // 首页加载动画效果主题
         LoadAnimation: 'CentiUI',
-        
+
         // 加载的样式文件路径
         CSS: [
-              "ui/themes/easyui/1.4.3/default/easyui.css",
+              "ui/css/easyui/1.4.3/default/easyui.css",
               "ui/css/easyui/style.css"
               ],
 
         // 加载自定义样式文件路径
         CustomCSS: ['custom/style.css'],
-        
+
         // 加载图标样式文件路径
         IconCSS: [
                   "ui/css/font-awesome/4.2.0/css/font-awesome.min.css",
-                  "ui/css/icon.css", 
+                  "ui/css/icon.css",
                   "ui/css/icon-base.css",
                   "ui/css/icon-black.css",
                   "ui/css/icon-black-16.css",
@@ -94,11 +94,11 @@ define(function (require) {
     var Menu = {
         // 菜单数据加载器，可以处理传入的菜单数据
         Loader: function(data) {
-        	
+
         	return data;
-        	
+
 //    		data = data[0] ? data[0] : [];
-//        
+//
 //    		return data.children ? data.children : [];
     	},
 
@@ -180,60 +180,60 @@ define(function (require) {
     var System = {
 		// 系统title
 		Title: '我的系统名称',
-		
+
 		// 系统头部title
 		HeaderTitle: '我的系统标题',
-		
+
 		// 系统尾部title
-		FooterTitle: '项目的技术服务信息',        
-    
+		FooterTitle: '项目的技术服务信息',
+
         // 首页加载时缓冲动画效果
         LoadingAnimation: true,
-        
+
         AjaxSend: function() {
-        	
+
         	window.ajaxCount = window.ajaxCount || 0;
         	window.ajaxCount++;
-        	
+
         	$('#ajax-loader').show();
-        	
-        	
+
+
 //    		var btn = $(window.SUBMIT_BTN);
-//    		
+//
 //    		if (btn.length) {
 //    			btn.linkbutton('disable')
 //    		}
     	},
-    	
+
     	AjaxComplete: function() {
-    		
+
     		if (--window.ajaxCount <= 0) {
     			$('#ajax-loader').hide();
     		}
-    		
+
 //    		var btn = $(window.SUBMIT_BTN);
 //			if (btn.length) {
 //				btn.linkbutton('enable')
 //			}
 //    		window.SUBMIT_BTN = null;
     	},
-        
+
         // 处理Ajax数据
 	    AjaxLoader: function(response) {
     		var translate = function(data) {
     			if (typeof data === 'string') return data;
-    			
+
     			var msg = [];
-    			
+
     			for (var name in data) {
     				if (data.hasOwnProperty(name)) {
     					msg.push(name + ": " + data[name]);
     				}
     			}
-    			
+
     			return msg.join('\n');
     		};
-	    
+
 
 	    	if (0 == response.code) {
 				return Promise.resolve(response.data);
@@ -246,38 +246,38 @@ define(function (require) {
 						return Promise.reject(response);
 						break;
 					case 500:
-					case 400:						
-					case 403:	
-					default: 
+					case 400:
+					case 403:
+					default:
 						if (!response.data || $.isEmptyObject(response.data)) {
 							$.messager.alert('错误', response.message, 'error');
 						}
 						else {
 							$.messager.alert(response.message, translate(response.data), 'error');
 						}
-						
+
 						return Promise.reject(response);
 				};
 			}
-	    	
+
 			return Promise.resolve(response);
 		},
-	    
+
 	    // 处理Ajax错误数据
 	    AjaxErrorLoader: function(response) {
-	    	
+
 			try {
 				$.messager.progress('close');
 			}
 			catch(e) {
-				
+
 			}
-			
+
 			if (302 == response.status) {
 				window.location.href = ContextPath+'system/mainframe/login';
 				return Promise.reject(response);
 			}
-	    	
+
 	    	if (response.responseJSON) {
 			var data = response.responseJSON;
 				$.messager.alert(data.message, $.toJSON(data.data), 'error');
@@ -286,32 +286,32 @@ define(function (require) {
 				$.messager.alert(result.status+' 错误', result.responseText, 'error');
 			}
 	    },
-        
+
         // debug模式，打印日志
         Debug: true,
-        
+
         // 使用easyui布局
         EasyUI: true
     };
     System = $.extend({}, System, CustomConfig.System);
-    
-    
+
+
     return {
         ContextPath: ContextPath,
-        
+
         ViewContextPath: ViewContextPath,
-        
+
         URL: URL,
-        
+
         Theme: Theme,
-        
+
         Menu: Menu,
-        
+
         System: System,
-        
+
         Cache: Cache,
-        
+
         Dictionary: Dictionary
-        
+
     };
 });
