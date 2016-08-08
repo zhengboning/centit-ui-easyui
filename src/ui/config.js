@@ -233,7 +233,7 @@ define(function (require) {
     		};
 
 
-	    	if (0 == response.code) {
+	    	if (0 === response.code) {
 				return Promise.resolve(response.data);
 			}
 			else if (response.code){
@@ -242,10 +242,12 @@ define(function (require) {
 					case 401:
 						window.location.href = ContextPath+'system/mainframe/login';
 						return Promise.reject(response);
-						break;
 					case 500:
+            break;
 					case 400:
+            break;
 					case 403:
+            break;
 					default:
 						if (!response.data || $.isEmptyObject(response.data)) {
 							$.messager.alert('错误', response.message, 'error');
@@ -255,7 +257,7 @@ define(function (require) {
 						}
 
 						return Promise.reject(response);
-				};
+				}
 			}
 
 			return Promise.resolve(response);
