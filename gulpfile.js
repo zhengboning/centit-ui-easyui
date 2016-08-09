@@ -12,4 +12,4 @@ gulp.registry(hub);
 gulp.task('default', function() {});
 gulp.task('build', gulp.series('clean', 'build'));
 gulp.task('gh-pages', gulp.series('build', 'gh-pages'));
-gulp.task('easyui', gulp.series('clean', gulp.parallel('easyuiJS', 'easyuiCSS')));
+gulp.task('easyui', gulp.series('clean', gulp.parallel('easyuiJS', 'easyuiCSS', 'easyuiImage')));

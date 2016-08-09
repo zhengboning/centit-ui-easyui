@@ -3,8 +3,6 @@
 const conf = require('../conf/gulp.conf');
 
 exports.config = {
-  baseUrl: `${conf.paths.src}/ui/easyui/`,
-  namePrefix: 'jquery-easyui',
   version: '1.5',
   theme: 'default',
   local: 'zh_CN',
@@ -17,13 +15,15 @@ exports.config.jsFiles = js(exports.config);
 
 exports.config.cssFiles = css(exports.config);
 
+exports.config.imageFiles = image(exports.config);
+
 ////////////////////////////////////////
 
 /**
  * 根据版本重新计算baseUrl
  */
 function baseUrl(config) {
-  return `${config.baseUrl}/${config.namePrefix}-${config.version}`;
+  return `${conf.paths.src}/ui/easyui/jquery-easyui-${config.version}`;
 }
 
 /**
@@ -66,6 +66,17 @@ function css(config) {
   }
 
   return cssFiles;
+}
+
+function image(config) {
+  var imageFiles = [],
+    baseUrl = config.baseUrl,
+    theme = config.theme;
+
+  imageFiles.push(`${baseUrl}/themes/icons/*`);
+  imageFiles.push(`${baseUrl}/themes/${theme}/images/*`);
+
+  return imageFiles;
 }
 
 
