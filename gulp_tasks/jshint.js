@@ -11,13 +11,10 @@ gulp.task('jshint', hint);
 function hint() {
   return gulp.src([
     conf.path.src('**/*.js'),
-    '!'+conf.paths.src+'/**/*.min.js',
-    '!'+conf.paths.src+'/ui/js/require.js',
-    '!'+conf.paths.src+'/ui/js/css-builder.js',
-    '!'+conf.paths.src+'/ui/js/text.js',
-    '!'+conf.paths.src+'/ui/js/normalize.js',
-    '!'+conf.paths.src+'/ui/js/plugins/**/*.js',
-    '!'+conf.paths.src+'/ui/js/easyui/**/*.js',
+    `!${conf.paths.src }/**/*.min.js`,
+    `!${conf.paths.src }/ui/easyui/**/*.min.js`,
+    `!${conf.paths.src }/ui/plugins/**/*.min.js`,
+    `!${conf.paths.src }/ui/require/**/*.min.js`
   ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
