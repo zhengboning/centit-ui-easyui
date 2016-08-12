@@ -23,6 +23,7 @@
   "dependencies": {
     "font-awesome": "^4.6.3",
     "requirejs": "^2.2.0",
-    "jquery": "1.11.1-rc2"
+    "jquery": "1.11.1-rc2",
+    "normalize-css": "^4.2.0"
   }
 }

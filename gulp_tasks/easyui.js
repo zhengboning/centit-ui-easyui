@@ -7,9 +7,10 @@ const filter = require('gulp-filter');
 const conf = require('../conf/gulp.conf');
 const easyuiConf = require('../conf/easyui.conf').config;
 
-gulp.task('easyuiJS', easyuiJS);
-gulp.task('easyuiCSS', easyuiCSS);
-gulp.task('easyuiImage', easyuiImage);
+gulp.task('easyui[js]', easyuiJS);
+gulp.task('easyui[css]', easyuiCSS);
+gulp.task('easyui[image]', easyuiImage);
+gulp.task('easyui', gulp.parallel('easyui[js]', 'easyui[css]', 'easyui[image]'));
 
 function easyuiJS() {
   return gulp.src(easyuiConf.jsFiles)

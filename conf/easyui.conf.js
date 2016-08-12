@@ -1,11 +1,11 @@
 'use strict';
 
-const conf = require('../conf/gulp.conf');
+const conf = require('./gulp.conf');
 
 exports.config = {
   version: '1.5',
   theme: 'default',
-  local: 'zh_CN',
+  locale: 'zh_CN',
   mobile: false,
 };
 
@@ -33,7 +33,7 @@ function js(config) {
   var jsFiles = [],
     baseUrl = config.baseUrl,
     mobile = config.mobile,
-    local = config.local;
+    locale = config.locale;
 
   jsFiles.push(`${baseUrl}/jquery.easyui.min.js`);
 
@@ -41,8 +41,8 @@ function js(config) {
     jsFiles.push(`${baseUrl}/jquery.easyui.mobile.js`);
   }
 
-  if (local) {
-    jsFiles.push(`${baseUrl}/locale/easyui-lang-${local}.js`)
+  if (locale) {
+    jsFiles.push(`${baseUrl}/locale/easyui-lang-${locale}.js`)
   }
 
   return jsFiles;

@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>Centit Admin</title>
+  <meta charset="utf-8">
+  <title>Centit UI</title>
+  <meta name="description" content="基于easyui、requirejs的后台管理前端框架">
+  <meta name="viewport" content="width=device-width">
+
   <link rel="shortcut icon" href="favicon.ico"/>
   <link rel="bookmark" href="favicon.ico"/>
-</head>
-<body>
-<script>
-  // 获取contentPath
-  function getContentPath() {
-    var base =  window.location.origin+'/';
-    var reg = new RegExp("/(.)*?/");
-    var r = window.location.pathname.match(reg);
-    if(r!=null) return  base + r[0] + '/'; return base;
-  }
 
-  window.ViewContextPath = window.ContextPath = getContentPath();
-</script>
-<script src="ui/js/require.js" data-main="ui/app.js"></script>
+<!-- build:css({.tmp,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <!-- endbower -->
+
+  <!-- inject:easyui[css] -->
+  <!-- easyui css files will be automatically insert here -->
+  <!-- endinject -->
+<!-- endbuild -->
+
+<!-- build:css({.tmp,src}) styles/app.css -->
+  <!-- inject:theme -->
+  <!-- theme files will be automatically insert here -->
+  <!-- endinject -->
+
+  <!-- inject:theme[color] -->
+  <!-- theme color files will be automatically insert here -->
+  <!-- endinject -->
+
+  <!-- inject:css -->
+  <!-- css files will be automatically insert here -->
+  <!-- endinject -->
+<!-- endbuild -->
+</head>
+<body class="easyui-layout" data-options="fit: true">
+
+<div id="header" data-options="region:'north'">
+  <div class="title" id="title">
+    Centit UI
+  </div>
+</div>
+
+<div id="side" data-options="region:'west', collapsedSize: 10">
+</div>
+
+<div id="center" data-options="region:'center'">
+</div>
+
+<div id="footer" data-options="region:'south', collapsedSize: 0, minHeight: 0">
+  Centit UI
+</div>
+
+<!-- build:js({.tmp,src}) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+
+  <!-- inject:easyui[js] -->
+  <!-- easyui.js files will be automatically insert here -->
+  <!-- endinject -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
+<!-- endbuild -->
+
 </body>
 </html>
