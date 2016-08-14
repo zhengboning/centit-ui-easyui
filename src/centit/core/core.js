@@ -1,13 +1,13 @@
 /**
  * CentitUI 核心组件
  */
-define(['ajax', 'config'], function(Ajax, Config) {
+define(['ajax', 'config'], function(ajax, config) {
 
-  var Core = {};
+  var core = {};
 
-  Core.ajax = ajax;
+  core.ajax = _ajax;
 
-  return Core;
+  return core;
 
   /////////////////////
 
@@ -18,11 +18,11 @@ define(['ajax', 'config'], function(Ajax, Config) {
    * @param options
    * @returns {*|Promise.<TResult>}
    */
-  function ajax(url, options) {
-    var loader = Config.ajax.loader;
-    var errorLoader = Config.ajax.errorLoader;
+  function _ajax(url, options) {
+    var loader = config.ajax.loader;
+    var errorLoader = config.ajax.errorLoader;
 
-    return Ajax.ajax(url, options)
+    return ajax.ajax(url, options)
       .then(
         // 处理正常数据
         function(response) {

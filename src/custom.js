@@ -1,14 +1,14 @@
 /**
  * 用户自定义配置
  */
-define(['config'], function(Config) {
+define(['config'], function(config) {
   'use strict';
 
-  Config.ajax.loader = function(data) {
+  config.ajax.loader = function(data) {
     if ($.isArray(data)) {
       return data.slice(0, 1);
     }
   };
 
-  return Config;
+  return config;
 });

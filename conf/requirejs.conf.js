@@ -16,9 +16,9 @@ exports.config = {
     config: 'config',
 
     // 核心
-    core: 'core',
-    ajax: 'cores/ajax',
-    util: 'cores/util',
+    core: 'core/core',
+    ajax: 'core/ajax',
+    util: 'core/util',
 
     // 第三方插件
     libs: '../libs'

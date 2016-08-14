@@ -4,7 +4,7 @@
 define(function() {
   'use strict';
 
-  var Config = {
+  var config = {
 
     // 处理正常响应
     loader: $.noop,
@@ -13,5 +13,5 @@ define(function() {
     errorLoader: $.noop
   };
 
-  return Config;
+  return config;
 });

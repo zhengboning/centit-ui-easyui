@@ -1,7 +1,7 @@
 /**
  * ES6异步写法重新封装ajax请求
  */
-define(['filters/param'], function(ParamFilter) {
+define(['filters/param'], function(paramFilter) {
   'use strict';
 
   $.ajaxSetup({
@@ -15,22 +15,22 @@ define(['filters/param'], function(ParamFilter) {
     data: {}
   };
 
-  var Ajax = {};
-  Ajax.ajax = ajax;
+  var ajax = {};
+  ajax.ajax = _ajax;
 
-  return Ajax;
+  return ajax;
 
   ////////////////////////
 
   /**
    * Promise封装$.ajax
    */
-  function ajax(url, options) {
+  function _ajax(url, options) {
     options = $.extend({}, DEFAULT_AJAX, options);
 
     // 中文转码
     // Form Data 转换成 SpringMVC 可以接受的格式
-    options.data = ParamFilter(options.data);
+    options.data = paramFilter(options.data);
 
     return new Promise(function(resole, reject) {
       options = $.extend(true, {}, options, {
