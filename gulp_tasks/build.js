@@ -12,14 +12,22 @@ const sourcemaps = require('gulp-sourcemaps');
 const spriter = require('gulp-css-spriter');
 const uglifySaveLicense = require('uglify-save-license');
 const inject = require('gulp-inject');
+const imagemin = require('gulp-imagemin');
 
 const conf = require('../conf/gulp.conf');
 const themeConf = require('../conf/theme.conf').config;
 
+gulp.task('optimize', optimize);
 gulp.task('sprite', sprite);
 gulp.task('copy', copy);
 gulp.task('build[clean]', clean);
-gulp.task('build', gulp.series('copy', 'sprite', build, 'build[clean]'));
+gulp.task('build', gulp.series('copy', 'sprite', 'optimize', build, 'build[clean]'));
+
+function optimize() {
+  return gulp.src(conf.path.dist('styles/images/*'))
+    .pipe(imagemin())
+    .pipe(gulp.dest(conf.path.dist('styles/images')))
+}
 
 function clean() {
   return del([

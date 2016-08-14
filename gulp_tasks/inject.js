@@ -50,11 +50,20 @@ function inject() {
     addRootSlash: false
   };
 
+  // 注入js
+  const injectJS = gulp
+    .src(conf.path.tmp('scripts/*.js'), {read: false});
+  const injectJSOptions = {
+    ignorePath: conf.paths.tmp,
+    addRootSlash: false
+  };
+
   return gulp.src(conf.path.src('index.html'))
     .pipe(gulpInject(injectEasyuiCSS, injectEasyuiCSSOptions))
     .pipe(gulpInject(injectEasyuiJS, injectEasyuiJSOptions))
     .pipe(gulpInject(injectTheme, injectThemeOptions))
     .pipe(gulpInject(injectThemeColor, injectThemeColorOptions))
+    .pipe(gulpInject(injectJS, injectJSOptions))
     .pipe(wiredep(Object.assign({}, conf.wiredep)))
     .pipe(gulp.dest(conf.paths.tmp));
 }

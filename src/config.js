@@ -4,7 +4,8 @@ require.config({
 
   },
   paths: {
-    jquery: "../bower_components/jquery/dist/jquery"
+    main: '../main',
+    core: '../core'
   },
   packages: [
 

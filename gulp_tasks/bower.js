@@ -14,6 +14,6 @@ function bower() {
   };
 
   return bowerRequireJS(options, function (rjsConfigFromBower) {
-    // all done!
+    console.log(arguments);
   });
 }

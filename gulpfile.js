@@ -9,7 +9,7 @@ const hub = new HubRegistry([conf.path.tasks('*.js')]);
 // Tell gulp to use the tasks just loaded
 gulp.registry(hub);
 
-gulp.task('default', gulp.series('clean', gulp.parallel('easyui', 'theme'), 'inject'));
+gulp.task('default', gulp.series('clean', gulp.parallel('easyui', 'theme', 'scripts'), 'inject'));
 
 gulp.task('build', gulp.series('clean', 'default', 'build'));
 
