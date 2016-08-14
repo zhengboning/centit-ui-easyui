@@ -5,19 +5,23 @@ exports.config = {
   shim: {
   },
   paths: {
+
     // main 入口
     main: '../main',
 
-    // 自定义
+    // 自定义配置
     custom: '../custom',
 
-    // config
+    // 配置文件
     config: 'config',
 
-    // core
+    // 核心
     core: 'core',
     ajax: 'cores/ajax',
     util: 'cores/util',
+
+    // 第三方插件
+    libs: '../libs'
 
   },
   packages: [
